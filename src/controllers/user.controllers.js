@@ -292,8 +292,8 @@ const refreshAccessToken = asyncHandler(async(req, res) => {
 })
 
 
-// **********************************Password edit*********************************
-const changeCorrectPassword = asyncHandler(async(req, res) =>{
+// **********************************Password change*********************************
+const changeCurrentPassword = asyncHandler(async(req, res) =>{
     const { oldPassword , newPassword } = req.body
 
    
@@ -572,7 +572,7 @@ export {
             logInUser,
             logOutUser,
             refreshAccessToken,
-            changeCorrectPassword,
+            changeCurrentPassword,
             getCurrentUser,
             updateAccountDetails,
             updateAvatar,
