@@ -4,6 +4,7 @@ import { User } from "../models/user.models.js";
 import { ApiResponse } from "../utils/ApiResponse.js"
 import { uploadOnCloudinary } from "../utils/cloudinary.js"
 import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
 
 // *****************************Genarate AT and RT***********************************
 const generateAccessAndRefreshTokens = async(userId ) => {
@@ -218,8 +219,8 @@ const logOutUser = asyncHandler(async (req, res) => {
     await User.findByIdAndUpdate(
         req.user._id,
         {
-            $set: {
-                refreshToken: undefined
+            $unset: {
+                refreshToken: 1
             }
         },
         {
@@ -515,7 +516,7 @@ const getWatchHistory = asyncHandler( async(req, res) =>{
         {
             $match: {
                 _id: new mongoose.Types.ObjectId(req.user._id)
-            },
+            }
         },
         {
             $lookup: {
