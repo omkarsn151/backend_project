@@ -1,1 +1,2 @@
-This a new backend project for practice
+#Summary
+This is a backend for a YouTube-like application built using Node.js, Express, MongoDB, JWT for authentication, bcrypt for password hashing, and CORS for handling cross-origin requests. It provides secure user authentication, video upload and management, and a simple RESTful API for interacting with the platform. The project is designed to handle user data, video information, and secure user interactions in a scalable way.
